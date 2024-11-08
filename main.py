@@ -93,6 +93,7 @@ def traverse_url_recursive(url, sleep_time=1):
         download_file(url, file_path)
 
 
-# Start scraping from the 'uploads' directory (common for WordPress sites)
-start_url = urllib.parse.urljoin(website_url, "wp-content/uploads/")
-traverse_url_recursive(start_url, time_between_download_requests)
+if __name__ == "__main__":
+    # Start scraping from the 'uploads' directory (common for WordPress sites)
+    start_url = urllib.parse.urljoin(website_url, "wp-content/uploads/")
+    traverse_url_recursive(start_url, time_between_download_requests)
